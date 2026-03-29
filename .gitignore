@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Data files if you do not want to upload large private dataset
+# Uncomment if needed
+# data/*.xlsx
+# data/*.csv
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+
+# Logs
+*.log
