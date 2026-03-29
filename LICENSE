@@ -1,0 +1,110 @@
+
+---
+
+# 2. `PROJECT_DOCUMENTATION.md`
+
+```markdown
+# Project Documentation
+
+## Title
+NYPD Vehicle Stop Analysis
+
+## Objective
+The purpose of this project is to analyze vehicle stop data from the NYPD to identify demographic patterns, policing trends, and predictive factors influencing vehicle searches and arrests.
+
+---
+
+## Research Questions
+
+### 1. What are the key demographic patterns in NYPD vehicle stops?
+This section examines the distribution of stops by:
+- gender
+- race
+- age
+
+It also uses a chi-square test to evaluate whether race is significantly associated with arrest outcomes.
+
+### 2. How does driver age distribution vary by race and gender?
+This section uses boxplots to compare age distributions across race and gender categories.
+
+### 3. How do police actions correlate with demographics and location?
+This section visualizes the spatial distribution of searches and arrests using geographic coordinate data.
+
+### 4. What factors influence whether a vehicle is searched during a stop?
+This question is explored using:
+- correlation analysis
+- logistic regression
+- ROC/AUC evaluation
+
+### 5. Can we predict whether an arrest will be made based on vehicle stop characteristics?
+This section uses:
+- imputation
+- SMOTE
+- Random Forest classification
+- confusion matrix
+- ROC curve
+- AUC score
+- feature importance
+
+---
+
+## Data Preprocessing
+
+The preprocessing steps include:
+- converting binary Y/N flags into numeric 1/0 values
+- converting reported age to numeric format
+- cleaning categorical variables like race and gender
+- handling missing values using imputation
+- using SMOTE for class balancing in arrest prediction
+
+---
+
+## Modeling Approach
+
+### Logistic Regression
+Used for the vehicle search question to understand which factors are associated with search outcomes.
+
+### Random Forest
+Used for arrest prediction because it can handle nonlinear interactions and provides feature importance.
+
+### SMOTE
+Applied only to the training set in order to balance the minority class before fitting the Random Forest model.
+
+---
+
+## Evaluation Metrics
+
+The following metrics were used:
+- Accuracy
+- Precision
+- Recall
+- F1-score
+- Confusion Matrix
+- ROC Curve
+- AUC Score
+
+These metrics help evaluate both overall performance and class-specific predictive strength.
+
+---
+
+## Conclusion
+
+The analysis shows that NYPD vehicle stops are not evenly distributed across demographic groups. Strong patterns appear in race, gender, and age distributions. Predictive modeling also shows that arrest outcomes can be forecast reasonably well from measurable stop-level characteristics.
+
+---
+
+## Reproducibility
+
+To reproduce results:
+1. Place the dataset in the `data/` folder
+2. Open the notebook in Jupyter
+3. Run all cells in order
+4. Review plots, tables, and model outputs
+
+---
+
+## Notes
+
+- Results may vary slightly if preprocessing choices, feature selection, or random seeds are changed
+- Use `random_state=42` consistently for reproducibility
+- Keep Q4 and Q5 separate because they answer different prediction questions
